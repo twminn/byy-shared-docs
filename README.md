@@ -9,11 +9,17 @@ This repository serves as the single source of truth for documentation that need
 - **Rails App Team** (`byy` repo)
 - **Frontend/Landing Page Team** (landing page repos)
 
-## ✅ Action Items
+## 🚨 Action Items
 
 | Priority | Item | Team | Status |
 |----------|------|------|--------|
-| **HIGH** | [CORS Configuration Required](api/CORS_CONFIGURATION_REQUIRED.md) | Rails | ✅ Completed (Dec 11, 2025) |
+| **MEDIUM** | [Opportunity Creation](api/OPPORTUNITY_CREATION_REQUEST.md) | Rails | ⏳ Requested |
+
+## ✅ Recently Completed
+
+| Item | Team | Completed |
+|------|------|-----------|
+| [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | Rails | Dec 11, 2025 |
 
 ## Structure
 
@@ -21,7 +27,7 @@ This repository serves as the single source of truth for documentation that need
 byy-shared-docs/
 ├── api/                          # API specifications
 │   ├── RAILS_API_ENDPOINT_SPEC.md        # Landing page lead capture API
-│   └── CORS_CONFIGURATION_REQUIRED.md    # ✅ COMPLETED
+│   └── CORS_CONFIGURATION_REQUIRED.md    # ⚠️ ACTION REQUIRED
 ├── ghl/                          # GoHighLevel integration docs
 │   ├── GOHIGHLEVEL_INTEGRATION.md        # Integration overview
 │   ├── GOHIGHLEVEL_INTEGRATION_GUIDE.md  # Detailed implementation guide
@@ -42,7 +48,7 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
-| ✅ [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | CORS enabled for landing pages |
+| [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | ✅ Completed - CORS enabled for landing pages |
 | [API Spec](api/RAILS_API_ENDPOINT_SPEC.md) | Implementation status and notes |
 | [GHL Migration](ghl/GHL_PRIVATE_INTEGRATION_MIGRATION.md) | API v2 migration details |
 
@@ -90,7 +96,8 @@ When GHL configuration changes:
 
 | Date | Change | Team |
 |------|--------|------|
-| 2025-12-11 | ✅ CORS configuration implemented and tested on staging | Rails |
+| 2025-12-11 | Requested opportunity creation feature | Frontend |
+| 2025-12-11 | CORS configuration implemented ✅ | Rails |
 | 2025-12-11 | Added CORS configuration requirements | Frontend |
 | 2025-12-10 | Initial shared docs setup | Rails |
 | 2025-12-10 | Added landing leads API spec | Rails |
