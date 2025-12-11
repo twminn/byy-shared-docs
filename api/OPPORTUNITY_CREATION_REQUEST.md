@@ -241,7 +241,8 @@ curl -X POST https://bestyearyet.io/api/v1/landing_leads \
 |------|--------|
 | Dec 11, 2025 | Feature requested |
 | Dec 11, 2025 | ✅ Rails team implemented |
-| TBD | Frontend verification |
+| Dec 11, 2025 | ✅ Production deployment (release-v3.0.52.1) |
+| Dec 11, 2025 | ✅ Production verified - ready for frontend use |
 
 ## Implementation Notes
 
@@ -251,7 +252,9 @@ curl -X POST https://bestyearyet.io/api/v1/landing_leads \
    - Added `find_pipeline_by_name(name)` - looks up pipeline by name (cached)
    - Added `find_stage_id_by_name(pipeline, stage_name)` - finds stage ID with fallback
    - Added `cached_pipelines` - caches pipeline list for 24 hours
-   - Added `GoHighLevelService.clear_pipeline_cache` - class method to clear cache
+   - Added `cached_stages(pipeline_id)` - caches stages per pipeline for 24 hours
+   - Added `GoHighLevelService.clear_pipeline_cache` - clears all caches
+   - Added `GoHighLevelService.clear_stage_cache(pipeline_id)` - clears specific pipeline stages
 
 2. **`app/controllers/api/v1/landing_leads_controller.rb`**
    - Added `pipeline` and `stage` to permitted params
@@ -259,11 +262,39 @@ curl -X POST https://bestyearyet.io/api/v1/landing_leads \
    - Updated responses to include `opportunity_id`
 
 3. **`lib/tasks/ghl_cache.rake`**
-   - `rake ghl:cache:clear_pipelines` - Clear pipeline cache
-   - `rake ghl:cache:list_pipelines` - List cached pipelines for debugging
+   - `rake ghl:cache:clear` - Clear all GHL caches (pipelines + stages)
+   - `rake ghl:cache:list` - List cached pipelines and stages
+   - `rake ghl:cache:status` - Show cache statistics
+   - `rake ghl:cache:clear_stages PIPELINE_ID=xxx` - Clear stages for specific pipeline
 
 **Cache Management:**
-- Pipelines are cached for 24 hours
-- Run `rake ghl:cache:clear_pipelines` after adding/modifying pipelines in GHL
-- Cache key: `ghl:pipelines:{location_id}`
+- Pipelines cached for 24 hours (key: `ghl:pipelines:{location_id}`)
+- Stages cached for 24 hours per pipeline (key: `ghl:stages:{pipeline_id}`)
+- Run `rake ghl:cache:clear` after adding/modifying pipelines in GHL
+
+---
+
+## ✅ Production Verified
+
+**Test Result (Dec 11, 2025):**
+```json
+{
+  "success": true,
+  "contact_id": "a5XMt7LCf4ult9dGuUyb",
+  "action": "created",
+  "message": "Contact and opportunity created successfully",
+  "opportunity_id": "Yho487ULpmsD8yEh6FpZ"
+}
+```
+
+**Available Pipelines (confirmed working):**
+- App - D2C New Member - Year 1
+- Coaching Inquiries
+- Dormant Accounts
+- **Engaged Prospects** ✅ (tested)
+- Final Partner Preview
+- Founding Sponsors
+- Gift Purchaser Journey
+- Gift Recipient Journey
+- Member Support Tickets
 
