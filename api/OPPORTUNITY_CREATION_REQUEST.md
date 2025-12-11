@@ -1,7 +1,7 @@
 # Feature Request: Opportunity Creation in Landing Leads API
 
 > **Priority:** MEDIUM  
-> **Status:** REQUESTED  
+> **Status:** ✅ IMPLEMENTED  
 > **Requested By:** Frontend Team  
 > **Date:** December 11, 2025
 
@@ -240,7 +240,30 @@ curl -X POST https://bestyearyet.io/api/v1/landing_leads \
 | Date | Action |
 |------|--------|
 | Dec 11, 2025 | Feature requested |
-| TBD | Rails team reviews |
-| TBD | Implementation |
+| Dec 11, 2025 | ✅ Rails team implemented |
 | TBD | Frontend verification |
+
+## Implementation Notes
+
+**Changes Made:**
+
+1. **`app/services/go_high_level_service.rb`**
+   - Added `find_pipeline_by_name(name)` - looks up pipeline by name (cached)
+   - Added `find_stage_id_by_name(pipeline, stage_name)` - finds stage ID with fallback
+   - Added `cached_pipelines` - caches pipeline list for 24 hours
+   - Added `GoHighLevelService.clear_pipeline_cache` - class method to clear cache
+
+2. **`app/controllers/api/v1/landing_leads_controller.rb`**
+   - Added `pipeline` and `stage` to permitted params
+   - Added `create_opportunity_if_requested` method
+   - Updated responses to include `opportunity_id`
+
+3. **`lib/tasks/ghl_cache.rake`**
+   - `rake ghl:cache:clear_pipelines` - Clear pipeline cache
+   - `rake ghl:cache:list_pipelines` - List cached pipelines for debugging
+
+**Cache Management:**
+- Pipelines are cached for 24 hours
+- Run `rake ghl:cache:clear_pipelines` after adding/modifying pipelines in GHL
+- Cache key: `ghl:pipelines:{location_id}`
 
