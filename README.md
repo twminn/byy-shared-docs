@@ -9,21 +9,29 @@ This repository serves as the single source of truth for documentation that need
 - **Rails App Team** (`byy` repo)
 - **Frontend/Landing Page Team** (landing page repos)
 
-## ✅ Action Items
+## 🚨 Action Items
 
 | Priority | Item | Team | Status |
 |----------|------|------|--------|
-| **HIGH** | [CORS Configuration Required](api/CORS_CONFIGURATION_REQUIRED.md) | Rails | ✅ Completed (Dec 11, 2025) |
-| **MEDIUM** | [Opportunity Creation](api/OPPORTUNITY_CREATION_REQUEST.md) | Rails | ✅ Completed (Dec 11, 2025) |
+| **HIGH** | [GTM Installation on Rails](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | Rails | 🔲 Pending |
+| **MEDIUM** | [Opportunity Creation](api/OPPORTUNITY_CREATION_REQUEST.md) | Rails | ⏳ Requested |
+
+## ✅ Recently Completed
+
+| Item | Team | Completed |
+|------|------|-----------|
+| [GTM on Landing Pages](analytics/GOOGLE_ANALYTICS_GTM.md) | Frontend | Dec 16, 2025 |
+| [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | Rails | Dec 11, 2025 |
 
 ## Structure
 
 ```
 byy-shared-docs/
+├── analytics/                    # Analytics & tracking
+│   └── GOOGLE_ANALYTICS_GTM.md           # GTM/GA4 setup (⚠️ Rails action required)
 ├── api/                          # API specifications
 │   ├── RAILS_API_ENDPOINT_SPEC.md        # Landing page lead capture API
-│   ├── CORS_CONFIGURATION_REQUIRED.md    # ✅ COMPLETED
-│   └── OPPORTUNITY_CREATION_REQUEST.md   # ✅ COMPLETED
+│   └── CORS_CONFIGURATION_REQUIRED.md    # ✅ CORS enabled
 ├── ghl/                          # GoHighLevel integration docs
 │   ├── GOHIGHLEVEL_INTEGRATION.md        # Integration overview
 │   ├── GOHIGHLEVEL_INTEGRATION_GUIDE.md  # Detailed implementation guide
@@ -39,12 +47,14 @@ byy-shared-docs/
 |----------|-------------|
 | [Landing Leads API](api/RAILS_API_ENDPOINT_SPEC.md) | API spec for `POST /api/v1/landing_leads` |
 | [GHL Integration Guide](ghl/GOHIGHLEVEL_INTEGRATION_GUIDE.md) | How to integrate with GHL |
+| [GTM/GA4 Setup](analytics/GOOGLE_ANALYTICS_GTM.md) | Analytics tracking implementation |
 
 ### For Rails Team
 
 | Document | Description |
 |----------|-------------|
-| ✅ [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | CORS enabled for landing pages |
+| [**GTM Installation**](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | 🔲 **Action Required** - Install GTM on Rails app |
+| [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | ✅ Completed - CORS enabled for landing pages |
 | [API Spec](api/RAILS_API_ENDPOINT_SPEC.md) | Implementation status and notes |
 | [GHL Migration](ghl/GHL_PRIVATE_INTEGRATION_MIGRATION.md) | API v2 migration details |
 
@@ -88,13 +98,24 @@ When GHL configuration changes:
 - **Rails Team**: Updates to API implementation, GHL service changes
 - **Frontend Team**: New landing pages, API usage questions
 
+## Analytics Configuration
+
+All BYY properties use the same Google Tag Manager container for consistent analytics:
+
+| Property | Value |
+|----------|-------|
+| **GTM Container ID** | `GTM-K9PVK9ZF` |
+| **GA4 Measurement ID** | `G-6GPCZV3DHR` |
+
+See [analytics/GOOGLE_ANALYTICS_GTM.md](analytics/GOOGLE_ANALYTICS_GTM.md) for full setup instructions.
+
 ## Version History
 
 | Date | Change | Team |
 |------|--------|------|
-| 2025-12-11 | ✅ Opportunity creation feature implemented | Rails |
-| 2025-12-11 | Added opportunity creation request | Frontend |
-| 2025-12-11 | ✅ CORS configuration implemented and tested on staging | Rails |
+| 2025-12-16 | Added GTM/GA4 documentation, landing pages installed | Frontend |
+| 2025-12-11 | Requested opportunity creation feature | Frontend |
+| 2025-12-11 | CORS configuration implemented ✅ | Rails |
 | 2025-12-11 | Added CORS configuration requirements | Frontend |
 | 2025-12-10 | Initial shared docs setup | Rails |
 | 2025-12-10 | Added landing leads API spec | Rails |
