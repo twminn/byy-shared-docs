@@ -35,7 +35,7 @@ This document describes the Google Analytics 4 (GA4) and Google Tag Manager (GTM
 │  └─────────────┘  └─────────────┘  └─────────────┘             │
 │                                                                  │
 │  ┌─────────────────────────────────────────────────┐            │
-│  │            bestyearyet.io (Rails App)           │ 🔲 Pending │
+│  │            bestyearyet.io (Rails App)           │ ✅ Installed│
 │  └─────────────────────────────────────────────────┘            │
 └─────────────────────────────────────────────────────────────────┘
 ```
@@ -58,7 +58,7 @@ We use **GTM to manage GA4** rather than direct GA4 installation because:
 | new.bestyearyet.com | Landing page | ✅ Installed |
 | gift.bestyearyet.com | Landing page | ✅ Installed |
 | bestyearyet.com | Main website | ✅ Installed |
-| **bestyearyet.io** | **Rails App** | **🔲 Action Required** |
+| **bestyearyet.io** | **Rails App** | ✅ Installed |
 
 ---
 
@@ -122,6 +122,13 @@ const BYYAnalytics = {
     },
     
     /**
+     * Generate unique event ID for Meta Pixel/CAPI deduplication
+     */
+    _generateEventId: function() {
+        return 'evt_' + Date.now() + '_' + Math.random().toString(36).substr(2, 9);
+    },
+    
+    /**
      * Track user login
      */
     trackLogin: function(userId, method = 'email') {
@@ -161,14 +168,29 @@ const BYYAnalytics = {
     },
     
     /**
-     * Track subscription purchase
+     * Track subscription purchase (includes event_id for deduplication)
      */
     trackPurchase: function(transactionId, value, plan) {
+        const eventId = this._generateEventId();
         this.pushEvent('purchase', {
             transaction_id: transactionId,
+            event_id: eventId,
             value: value,
             currency: 'USD',
             items: [{ item_name: plan, price: value }]
+        });
+    },
+    
+    /**
+     * Track checkout initiation (includes event_id for deduplication)
+     */
+    trackInitiateCheckout: function(value, contentName) {
+        const eventId = this._generateEventId();
+        this.pushEvent('initiate_checkout', {
+            event_id: eventId,
+            value: value,
+            currency: 'USD',
+            content_name: contentName
         });
     },
     
@@ -411,5 +433,7 @@ document.addEventListener('turbo:load', function() {
 |------|--------|------|
 | 2025-12-16 | Initial GTM/GA4 setup documentation | Frontend |
 | 2025-12-16 | Landing pages GTM installation complete | Frontend |
-| TBD | Rails app GTM installation | Rails |
+| 2025-12-16 | Rails app GTM installation complete | Rails |
+| 2025-12-16 | Added event_id for Meta Pixel/CAPI deduplication | Rails |
+| 2025-12-16 | Added trackInitiateCheckout() function | Rails |
 

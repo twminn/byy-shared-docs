@@ -64,8 +64,10 @@ Create these Data Layer Variables:
 | `DLV - value` | `value` | Data Layer Variable |
 | `DLV - currency` | `currency` | Data Layer Variable |
 | `DLV - transaction_id` | `transaction_id` | Data Layer Variable |
+| `DLV - event_id` | `event_id` | Data Layer Variable |
 | `DLV - user_id` | `user_id` | Data Layer Variable |
 | `DLV - method` | `method` | Data Layer Variable |
+| `DLV - content_name` | `content_name` | Data Layer Variable |
 | `DLV - items` | `items` | Data Layer Variable |
 
 **For each variable:**
@@ -136,9 +138,11 @@ This is the critical tag that fixes the currency error.
     currency: {{DLV - currency}} || 'USD',
     content_type: 'product',
     content_ids: [{{DLV - transaction_id}}]
-  });
+  }, { eventID: {{DLV - event_id}} });
 </script>
 ```
+
+> ⚠️ **Important:** The `eventID` parameter is required for deduplication with Conversion API (CAPI). See [Deduplication](#deduplication-with-conversion-api) section below.
 
 ### 3.2 Create the Trigger
 
@@ -194,13 +198,14 @@ This is the critical tag that fixes the currency error.
 <script>
   fbq('track', 'InitiateCheckout', {
     content_type: 'product',
+    content_name: {{DLV - content_name}},
     value: {{DLV - value}},
     currency: {{DLV - currency}} || 'USD'
-  });
+  }, { eventID: {{DLV - event_id}} });
 </script>
 ```
 
-**Trigger:** Custom Event → `begin_checkout` (if implemented)
+**Trigger:** Custom Event → `initiate_checkout`
 
 ---
 
@@ -258,13 +263,42 @@ fbq('track', 'Purchase', { value: 1.00, currency: 'USD' });
 
 ## Event Mapping Reference
 
-| BYYAnalytics Function | dataLayer Event | Meta Pixel Event |
-|-----------------------|-----------------|------------------|
-| `trackSignup()` | `sign_up` | `CompleteRegistration` |
-| `trackLogin()` | `login` | `Login` (custom) |
-| `trackPurchase()` | `purchase` | `Purchase` |
-| `trackFeatureUsed()` | `feature_used` | `CustomEvent` |
-| `trackFormSubmit()` | `form_submit` | `Lead` |
+| BYYAnalytics Function | dataLayer Event | Meta Pixel Event | Has event_id |
+|-----------------------|-----------------|------------------|--------------|
+| `trackSignup()` | `sign_up` | `CompleteRegistration` | No |
+| `trackLogin()` | `login` | `Login` (custom) | No |
+| `trackPurchase()` | `purchase` | `Purchase` | ✅ Yes |
+| `trackInitiateCheckout()` | `initiate_checkout` | `InitiateCheckout` | ✅ Yes |
+| `trackFeatureUsed()` | `feature_used` | `CustomEvent` | No |
+| `trackFormSubmit()` | `form_submit` | `Lead` | No |
+
+---
+
+## Deduplication with Conversion API
+
+If you're using both Meta Pixel (browser-side) and Conversion API (server-side), you **must** include `eventID` to prevent duplicate event counting.
+
+### How It Works
+
+1. **BYYAnalytics** generates a unique `event_id` (e.g., `evt_1702745123456_a3b8c9d2f`)
+2. This ID is pushed to the dataLayer with the event
+3. GTM passes it to Meta Pixel via the `eventID` parameter
+4. The same `event_id` should be sent via CAPI
+5. Meta automatically deduplicates matching events
+
+### Event ID Format
+
+```
+evt_[timestamp]_[random_string]
+Example: evt_1702745123456_a3b8c9d2f
+```
+
+### Verifying Deduplication
+
+1. Go to [Meta Events Manager](https://business.facebook.com/events_manager)
+2. Select your Pixel → **Overview**
+3. Look for the **Event Deduplication** section
+4. Check the duplicate rate percentage (lower is better)
 
 ---
 
@@ -325,4 +359,7 @@ policy.connect_src :self, 'https://www.facebook.com'
 | Date | Change | Team |
 |------|--------|------|
 | 2025-12-16 | Initial Meta Pixel GTM setup documentation | Rails |
+| 2025-12-16 | Added event_id for Pixel/CAPI deduplication | Rails |
+| 2025-12-16 | Added trackInitiateCheckout() with event_id | Rails |
+| 2025-12-16 | Added deduplication verification section | Rails |
 
