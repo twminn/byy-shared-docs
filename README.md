@@ -13,13 +13,14 @@ This repository serves as the single source of truth for documentation that need
 
 | Priority | Item | Team | Status |
 |----------|------|------|--------|
-| **HIGH** | [GTM Installation on Rails](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | Rails | 🔲 Pending |
+| **HIGH** | [Meta Pixel Setup in GTM](analytics/META_PIXEL_GTM_SETUP.md) | Frontend | 🔲 Pending |
 | **MEDIUM** | [Opportunity Creation](api/OPPORTUNITY_CREATION_REQUEST.md) | Rails | ⏳ Requested |
 
 ## ✅ Recently Completed
 
 | Item | Team | Completed |
 |------|------|-----------|
+| [GTM Installation on Rails](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | Rails | Dec 16, 2025 |
 | [GTM on Landing Pages](analytics/GOOGLE_ANALYTICS_GTM.md) | Frontend | Dec 16, 2025 |
 | [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | Rails | Dec 11, 2025 |
 
@@ -28,7 +29,8 @@ This repository serves as the single source of truth for documentation that need
 ```
 byy-shared-docs/
 ├── analytics/                    # Analytics & tracking
-│   └── GOOGLE_ANALYTICS_GTM.md           # GTM/GA4 setup (⚠️ Rails action required)
+│   ├── GOOGLE_ANALYTICS_GTM.md           # GTM/GA4 setup ✅
+│   └── META_PIXEL_GTM_SETUP.md           # Meta Pixel in GTM (🔲 action required)
 ├── api/                          # API specifications
 │   ├── RAILS_API_ENDPOINT_SPEC.md        # Landing page lead capture API
 │   └── CORS_CONFIGURATION_REQUIRED.md    # ✅ CORS enabled
@@ -45,6 +47,7 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
+| [**Meta Pixel GTM Setup**](analytics/META_PIXEL_GTM_SETUP.md) | 🔲 **Action Required** - Configure Meta Pixel in GTM |
 | [Landing Leads API](api/RAILS_API_ENDPOINT_SPEC.md) | API spec for `POST /api/v1/landing_leads` |
 | [GHL Integration Guide](ghl/GOHIGHLEVEL_INTEGRATION_GUIDE.md) | How to integrate with GHL |
 | [GTM/GA4 Setup](analytics/GOOGLE_ANALYTICS_GTM.md) | Analytics tracking implementation |
@@ -53,7 +56,7 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
-| [**GTM Installation**](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | 🔲 **Action Required** - Install GTM on Rails app |
+| [GTM Installation](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | ✅ Completed - GTM installed on Rails app |
 | [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | ✅ Completed - CORS enabled for landing pages |
 | [API Spec](api/RAILS_API_ENDPOINT_SPEC.md) | Implementation status and notes |
 | [GHL Migration](ghl/GHL_PRIVATE_INTEGRATION_MIGRATION.md) | API v2 migration details |
@@ -113,10 +116,16 @@ See [analytics/GOOGLE_ANALYTICS_GTM.md](analytics/GOOGLE_ANALYTICS_GTM.md) for f
 
 | Date | Change | Team |
 |------|--------|------|
+| 2025-12-16 | Added Meta Pixel GTM setup documentation | Rails |
+| 2025-12-16 | GTM installed on Rails app (release-v3.0.54) | Rails |
 | 2025-12-16 | Added GTM/GA4 documentation, landing pages installed | Frontend |
 | 2025-12-11 | Requested opportunity creation feature | Frontend |
 | 2025-12-11 | CORS configuration implemented ✅ | Rails |
 | 2025-12-11 | Added CORS configuration requirements | Frontend |
 | 2025-12-10 | Initial shared docs setup | Rails |
 | 2025-12-10 | Added landing leads API spec | Rails |
+
+
+
+
 
