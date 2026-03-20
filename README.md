@@ -30,6 +30,7 @@ This repository serves as the single source of truth for documentation that need
 byy-shared-docs/
 ├── analytics/                    # Analytics & tracking
 │   ├── GOOGLE_ANALYTICS_GTM.md           # GTM/GA4 setup ✅
+│   ├── ENGAGEMENT_TRACKING.md            # Engagement tracker installation for landing pages
 │   └── META_PIXEL_GTM_SETUP.md           # Meta Pixel in GTM (🔲 action required)
 ├── api/                          # API specifications
 │   ├── RAILS_API_ENDPOINT_SPEC.md        # Landing page lead capture API
@@ -48,6 +49,7 @@ byy-shared-docs/
 | Document | Description |
 |----------|-------------|
 | [**Meta Pixel GTM Setup**](analytics/META_PIXEL_GTM_SETUP.md) | 🔲 **Action Required** - Configure Meta Pixel in GTM |
+| [**Engagement Tracking**](analytics/ENGAGEMENT_TRACKING.md) | Install `byy-tracker.js` for scroll, CTA, form, video, and engagement tracking |
 | [Landing Leads API](api/RAILS_API_ENDPOINT_SPEC.md) | API spec for `POST /api/v1/landing_leads` |
 | [GHL Integration Guide](ghl/GOHIGHLEVEL_INTEGRATION_GUIDE.md) | How to integrate with GHL |
 | [GTM/GA4 Setup](analytics/GOOGLE_ANALYTICS_GTM.md) | Analytics tracking implementation |
@@ -124,6 +126,10 @@ See [analytics/GOOGLE_ANALYTICS_GTM.md](analytics/GOOGLE_ANALYTICS_GTM.md) for f
 | 2025-12-11 | Added CORS configuration requirements | Frontend |
 | 2025-12-10 | Initial shared docs setup | Rails |
 | 2025-12-10 | Added landing leads API spec | Rails |
+
+
+
+
 
 
 
