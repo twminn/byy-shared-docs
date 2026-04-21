@@ -13,6 +13,7 @@ This repository serves as the single source of truth for documentation that need
 
 | Priority | Item | Team | Status |
 |----------|------|------|--------|
+| **HIGH** | [Cross-Domain Tracking — CTA Changes](analytics/CROSS_DOMAIN_TRACKING.md) | Frontend | 🔲 Action Required |
 | **HIGH** | [Meta Pixel Setup in GTM](analytics/META_PIXEL_GTM_SETUP.md) | Frontend | 🔲 Pending |
 | **MEDIUM** | [Opportunity Creation](api/OPPORTUNITY_CREATION_REQUEST.md) | Rails | ⏳ Requested |
 
@@ -30,6 +31,7 @@ This repository serves as the single source of truth for documentation that need
 byy-shared-docs/
 ├── analytics/                    # Analytics & tracking
 │   ├── GOOGLE_ANALYTICS_GTM.md           # GTM/GA4 setup ✅
+│   ├── CROSS_DOMAIN_TRACKING.md          # Cross-domain linking CTA changes (🔲 action required)
 │   ├── ENGAGEMENT_TRACKING.md            # Engagement tracker installation for landing pages
 │   └── META_PIXEL_GTM_SETUP.md           # Meta Pixel in GTM (🔲 action required)
 ├── api/                          # API specifications
@@ -48,6 +50,7 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
+| [**Cross-Domain Tracking**](analytics/CROSS_DOMAIN_TRACKING.md) | 🔲 **Action Required** - Update CTA buttons for purchase attribution |
 | [**Meta Pixel GTM Setup**](analytics/META_PIXEL_GTM_SETUP.md) | 🔲 **Action Required** - Configure Meta Pixel in GTM |
 | [**Engagement Tracking**](analytics/ENGAGEMENT_TRACKING.md) | Install `byy-tracker.js` for scroll, CTA, form, video, and engagement tracking |
 | [Landing Leads API](api/RAILS_API_ENDPOINT_SPEC.md) | API spec for `POST /api/v1/landing_leads` |
@@ -118,6 +121,7 @@ See [analytics/GOOGLE_ANALYTICS_GTM.md](analytics/GOOGLE_ANALYTICS_GTM.md) for f
 
 | Date | Change | Team |
 |------|--------|------|
+| 2026-04-21 | Added cross-domain tracking CTA changes for LP team | Analytics |
 | 2025-12-16 | Added Meta Pixel GTM setup documentation | Rails |
 | 2025-12-16 | GTM installed on Rails app (release-v3.0.54) | Rails |
 | 2025-12-16 | Added GTM/GA4 documentation, landing pages installed | Frontend |
