@@ -6,8 +6,10 @@ Shared documentation between BYY projects (Rails app, landing pages, etc.)
 
 This repository serves as the single source of truth for documentation that needs to be shared between multiple BYY development teams:
 
-- **Rails App Team** (`byy` repo)
-- **Frontend/Landing Page Team** (landing page repos)
+- **Rails Team** — Responsible for the new Best Year Yet application built on Rails
+- **Analytics Team** — Manages marketing, analytics, and reporting for Best Year Yet
+- **Front End Team** — Manages the main website bestyearyet.com, campaign landing pages, and other front end customer-facing pages
+- **Legacy Team** — Maintains the original Best Year Yet PRO ColdFusion application
 
 ## 🚨 Action Items
 
@@ -29,18 +31,20 @@ This repository serves as the single source of truth for documentation that need
 
 ```
 byy-shared-docs/
-├── analytics/                    # Analytics & tracking
+├── analytics/                    # Analytics & tracking (Analytics Team)
 │   ├── GOOGLE_ANALYTICS_GTM.md           # GTM/GA4 setup ✅
 │   ├── CROSS_DOMAIN_TRACKING.md          # Cross-domain linking CTA changes (🔲 action required)
 │   ├── ENGAGEMENT_TRACKING.md            # Engagement tracker installation for landing pages
 │   └── META_PIXEL_GTM_SETUP.md           # Meta Pixel in GTM (🔲 action required)
-├── api/                          # API specifications
+├── api/                          # API specifications (Rails Team)
 │   ├── RAILS_API_ENDPOINT_SPEC.md        # Landing page lead capture API
 │   └── CORS_CONFIGURATION_REQUIRED.md    # ✅ CORS enabled
 ├── ghl/                          # GoHighLevel integration docs
 │   ├── GOHIGHLEVEL_INTEGRATION.md        # Integration overview
 │   ├── GOHIGHLEVEL_INTEGRATION_GUIDE.md  # Detailed implementation guide
 │   └── GHL_PRIVATE_INTEGRATION_MIGRATION.md  # API v2 migration details
+├── legacy/                       # Legacy Team (BYY PRO ColdFusion app)
+│   └── README.md
 └── README.md
 ```
 
@@ -65,6 +69,12 @@ byy-shared-docs/
 | [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | ✅ Completed - CORS enabled for landing pages |
 | [API Spec](api/RAILS_API_ENDPOINT_SPEC.md) | Implementation status and notes |
 | [GHL Migration](ghl/GHL_PRIVATE_INTEGRATION_MIGRATION.md) | API v2 migration details |
+
+### For Legacy Team
+
+| Document | Description |
+|----------|-------------|
+| [Legacy Folder](legacy/) | Files and tasks for the Legacy Team |
 
 ## Endpoints
 
@@ -103,8 +113,10 @@ When GHL configuration changes:
 
 ## Team Contacts
 
-- **Rails Team**: Updates to API implementation, GHL service changes
-- **Frontend Team**: New landing pages, API usage questions
+- **Rails Team**: Updates to API implementation, GHL service changes, new app features
+- **Analytics Team**: Marketing analytics, tracking implementation, reporting
+- **Front End Team**: Main website (bestyearyet.com), landing pages, customer-facing pages
+- **Legacy Team**: BYY PRO application (ColdFusion), subscriber management, legacy integrations
 
 ## Analytics Configuration
 
