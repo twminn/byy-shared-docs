@@ -1,0 +1,91 @@
+<!--
+  REFERENCE IMPLEMENTATION: Pricing Experiment HTML Blocks
+  ========================================================
+  
+  Copy these blocks into your landing page pricing sections.
+  The Lambda@Edge origin-response function will strip all blocks
+  EXCEPT the one matching the visitor's assigned variant.
+  
+  Experiment: pricing-v1
+  Variants: high (control), mid, low
+  
+  IMPORTANT:
+  - All three blocks must be present in the source HTML
+  - Only ONE block will reach the browser
+  - Pricing must NOT appear in external .js files (Lambda can't modify those)
+  - Each block should be self-contained (price text + payment link)
+-->
+
+<!-- ============================================= -->
+<!-- ANNUAL PRICING SECTION                        -->
+<!-- ============================================= -->
+
+<div data-exp-price="pricing-v1:high" class="pricing-option annual">
+  <h3>Annual Plan</h3>
+  <p class="price">$149<span class="period">/year</span></p>
+  <p class="savings">Save over 15%</p>
+  <a href="https://pay.bestyearyet.io/b/4gMbJ3gIhcD8clB4YZaZi04" class="button button-green">
+    Subscribe Annually
+  </a>
+</div>
+
+<div data-exp-price="pricing-v1:mid" class="pricing-option annual">
+  <h3>Annual Plan</h3>
+  <p class="price">$98<span class="period">/year</span></p>
+  <p class="savings">Save over 15%</p>
+  <a href="https://pay.bestyearyet.io/b/14A4gBcs15aG4T9dvvaZi06" class="button button-green">
+    Subscribe Annually
+  </a>
+</div>
+
+<div data-exp-price="pricing-v1:low" class="pricing-option annual">
+  <h3>Annual Plan</h3>
+  <p class="price">$49<span class="period">/year</span></p>
+  <p class="savings">Save over 15%</p>
+  <a href="https://pay.bestyearyet.io/b/aFaeVfeA9gTo99p0IJaZi08" class="button button-green">
+    Subscribe Annually
+  </a>
+</div>
+
+
+<!-- ============================================= -->
+<!-- MONTHLY PRICING SECTION                       -->
+<!-- ============================================= -->
+
+<div data-exp-price="pricing-v1:high" class="pricing-option monthly">
+  <h3>Monthly Plan</h3>
+  <p class="price">$14.99<span class="period">/month</span></p>
+  <a href="https://pay.bestyearyet.io/b/cNibJ3dw546CclBfDDaZi05" class="button button-blue">
+    Subscribe Monthly
+  </a>
+</div>
+
+<div data-exp-price="pricing-v1:mid" class="pricing-option monthly">
+  <h3>Monthly Plan</h3>
+  <p class="price">$9.99<span class="period">/month</span></p>
+  <a href="https://pay.bestyearyet.io/b/eVq8wRgIhav085lajjaZi07" class="button button-blue">
+    Subscribe Monthly
+  </a>
+</div>
+
+<div data-exp-price="pricing-v1:low" class="pricing-option monthly">
+  <h3>Monthly Plan</h3>
+  <p class="price">$4.99<span class="period">/month</span></p>
+  <a href="https://pay.bestyearyet.io/b/14AfZj1Nnav085lbnnaZi09" class="button button-blue">
+    Subscribe Monthly
+  </a>
+</div>
+
+
+<!-- ============================================= -->
+<!-- NOTES FOR FRONTEND TEAM                       -->
+<!-- ============================================= -->
+<!--
+  1. Style the .pricing-option elements as needed — they can use any CSS classes
+  2. The data-exp-price attribute is the ONLY thing Lambda looks for
+  3. Format must be: data-exp-price="EXPERIMENT_ID:VARIANT_ID"
+  4. Nest any content inside — price text, buttons, feature lists, etc.
+  5. DO NOT put pricing in config.js or any external JS file
+  6. The pricing toggle (monthly/annual switch) should toggle visibility
+     of .annual vs .monthly blocks, NOT change text content via JS
+-->
