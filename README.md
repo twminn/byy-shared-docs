@@ -13,6 +13,7 @@ This repository serves as the single source of truth for documentation that need
 
 | Priority | Item | Team | Status |
 |----------|------|------|--------|
+| **HIGH** | [Post-Checkout Subscriber Flow](api/POST_CHECKOUT_SUBSCRIBER_FLOW.md) | Rails | 🔲 Validate user path after Stripe redirect |
 | **HIGH** | [Cross-Domain Tracking — CTA Changes](analytics/CROSS_DOMAIN_TRACKING.md) | Frontend | 🔲 Action Required |
 | **HIGH** | [Meta Pixel Setup in GTM](analytics/META_PIXEL_GTM_SETUP.md) | Frontend | 🔲 Pending |
 | **MEDIUM** | [Opportunity Creation](api/OPPORTUNITY_CREATION_REQUEST.md) | Rails | ⏳ Requested |
@@ -21,6 +22,7 @@ This repository serves as the single source of truth for documentation that need
 
 | Item | Team | Completed |
 |------|------|-----------|
+| [Post-Checkout Redirect Fix](analytics/POST_CHECKOUT_REDIRECT_INCIDENT.md) | Frontend | May 6, 2026 |
 | [GTM Installation on Rails](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | Rails | Dec 16, 2025 |
 | [GTM on Landing Pages](analytics/GOOGLE_ANALYTICS_GTM.md) | Frontend | Dec 16, 2025 |
 | [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | Rails | Dec 11, 2025 |
@@ -50,6 +52,7 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
+| [**Post-Checkout Redirect Incident**](analytics/POST_CHECKOUT_REDIRECT_INCIDENT.md) | Incident report + prevention measures for checkout dead-end |
 | [**Cross-Domain Tracking**](analytics/CROSS_DOMAIN_TRACKING.md) | 🔲 **Action Required** - Update CTA buttons for purchase attribution |
 | [**Meta Pixel GTM Setup**](analytics/META_PIXEL_GTM_SETUP.md) | 🔲 **Action Required** - Configure Meta Pixel in GTM |
 | [**Engagement Tracking**](analytics/ENGAGEMENT_TRACKING.md) | Install `byy-tracker.js` for scroll, CTA, form, video, and engagement tracking |
@@ -61,6 +64,7 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
+| [**Post-Checkout Subscriber Flow**](api/POST_CHECKOUT_SUBSCRIBER_FLOW.md) | 🔲 **Action Required** - Handle Stripe redirect, create accounts, start onboarding |
 | [GTM Installation](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | ✅ Completed - GTM installed on Rails app |
 | [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | ✅ Completed - CORS enabled for landing pages |
 | [API Spec](api/RAILS_API_ENDPOINT_SPEC.md) | Implementation status and notes |
@@ -121,6 +125,7 @@ See [analytics/GOOGLE_ANALYTICS_GTM.md](analytics/GOOGLE_ANALYTICS_GTM.md) for f
 
 | Date | Change | Team |
 |------|--------|------|
+| 2026-05-06 | Post-checkout redirect fix + subscriber flow doc for Rails team | Frontend |
 | 2026-04-21 | Added cross-domain tracking CTA changes for LP team | Analytics |
 | 2025-12-16 | Added Meta Pixel GTM setup documentation | Rails |
 | 2025-12-16 | GTM installed on Rails app (release-v3.0.54) | Rails |
