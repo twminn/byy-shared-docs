@@ -18,6 +18,9 @@ This repository serves as the single source of truth for documentation that need
 | **HIGH** | [Post-Checkout Subscriber Flow](api/POST_CHECKOUT_SUBSCRIBER_FLOW.md) | Rails | 🔲 Validate user path after Stripe redirect |
 | **HIGH** | [Cross-Domain Tracking — CTA Changes](analytics/CROSS_DOMAIN_TRACKING.md) | Frontend | 🔲 Action Required |
 | **HIGH** | [Meta Pixel Setup in GTM](analytics/META_PIXEL_GTM_SETUP.md) | Frontend | 🔲 Pending |
+| **HIGH** | [Deploy Annotation Setup — Rails](analytics/ANNOTATION_SETUP_RAILS.md) | Rails | 🔲 Action Required |
+| **HIGH** | [Deploy Annotation Setup — Frontend](analytics/ANNOTATION_SETUP_FRONTEND.md) | Frontend | 🔲 Action Required |
+| **HIGH** | [Deploy Annotation Setup — Legacy](analytics/ANNOTATION_SETUP_LEGACY.md) | Legacy | 🔲 Action Required |
 | **MEDIUM** | [Opportunity Creation](api/OPPORTUNITY_CREATION_REQUEST.md) | Rails | ⏳ Requested |
 
 ## ✅ Recently Completed
@@ -37,7 +40,10 @@ byy-shared-docs/
 │   ├── GOOGLE_ANALYTICS_GTM.md           # GTM/GA4 setup ✅
 │   ├── CROSS_DOMAIN_TRACKING.md          # Cross-domain linking CTA changes (🔲 action required)
 │   ├── ENGAGEMENT_TRACKING.md            # Engagement tracker installation for landing pages
-│   └── META_PIXEL_GTM_SETUP.md           # Meta Pixel in GTM (🔲 action required)
+│   ├── META_PIXEL_GTM_SETUP.md           # Meta Pixel in GTM (🔲 action required)
+│   ├── ANNOTATION_SETUP_RAILS.md         # Deploy annotation setup for Rails team
+│   ├── ANNOTATION_SETUP_FRONTEND.md      # Deploy annotation setup for Frontend team
+│   └── ANNOTATION_SETUP_LEGACY.md        # Deploy annotation setup for Legacy team
 ├── api/                          # API specifications (Rails Team)
 │   ├── RAILS_API_ENDPOINT_SPEC.md        # Landing page lead capture API
 │   └── CORS_CONFIGURATION_REQUIRED.md    # ✅ CORS enabled
@@ -59,6 +65,7 @@ byy-shared-docs/
 | [**Post-Checkout Redirect Incident**](analytics/POST_CHECKOUT_REDIRECT_INCIDENT.md) | Incident report + prevention measures for checkout dead-end |
 | [**Cross-Domain Tracking**](analytics/CROSS_DOMAIN_TRACKING.md) | 🔲 **Action Required** - Update CTA buttons for purchase attribution |
 | [**Meta Pixel GTM Setup**](analytics/META_PIXEL_GTM_SETUP.md) | 🔲 **Action Required** - Configure Meta Pixel in GTM |
+| [**Deploy Annotation Setup**](analytics/ANNOTATION_SETUP_FRONTEND.md) | 🔲 **Action Required** - Add deploy annotations to your CI pipeline |
 | [**Engagement Tracking**](analytics/ENGAGEMENT_TRACKING.md) | Install `byy-tracker.js` for scroll, CTA, form, video, and engagement tracking |
 | [Landing Leads API](api/RAILS_API_ENDPOINT_SPEC.md) | API spec for `POST /api/v1/landing_leads` |
 | [GHL Integration Guide](ghl/GOHIGHLEVEL_INTEGRATION_GUIDE.md) | How to integrate with GHL |
@@ -69,6 +76,7 @@ byy-shared-docs/
 | Document | Description |
 |----------|-------------|
 | [**Post-Checkout Subscriber Flow**](api/POST_CHECKOUT_SUBSCRIBER_FLOW.md) | 🔲 **Action Required** - Handle Stripe redirect, create accounts, start onboarding |
+| [**Deploy Annotation Setup**](analytics/ANNOTATION_SETUP_RAILS.md) | 🔲 **Action Required** - Add deploy annotations to your CI pipeline |
 | [GTM Installation](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | ✅ Completed - GTM installed on Rails app |
 | [CORS Configuration](api/CORS_CONFIGURATION_REQUIRED.md) | ✅ Completed - CORS enabled for landing pages |
 | [API Spec](api/RAILS_API_ENDPOINT_SPEC.md) | Implementation status and notes |
@@ -78,6 +86,7 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
+| [**Deploy Annotation Setup**](analytics/ANNOTATION_SETUP_LEGACY.md) | 🔲 **Action Required** - Add deploy annotations to your CI pipeline |
 | [Legacy Folder](legacy/) | Files and tasks for the Legacy Team |
 
 ## Endpoints
@@ -137,6 +146,7 @@ See [analytics/GOOGLE_ANALYTICS_GTM.md](analytics/GOOGLE_ANALYTICS_GTM.md) for f
 
 | Date | Change | Team |
 |------|--------|------|
+| 2026-05-07 | Added deploy annotation setup guides for Rails, Frontend, and Legacy teams | Analytics |
 | 2026-05-06 | Post-checkout redirect fix + subscriber flow doc for Rails team | Frontend |
 | 2026-04-21 | Added cross-domain tracking CTA changes for LP team | Analytics |
 | 2025-12-16 | Added Meta Pixel GTM setup documentation | Rails |
