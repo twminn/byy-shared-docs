@@ -15,7 +15,6 @@ This repository serves as the single source of truth for documentation that need
 
 | Priority | Item | Team | Status |
 |----------|------|------|--------|
-| **CRITICAL** | [Tour + Signup Instrumentation](analytics/07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md) | Rails | 🔲 Action Required — same-day |
 | **HIGH** | [Post-Checkout Subscriber Flow](api/POST_CHECKOUT_SUBSCRIBER_FLOW.md) | Rails | 🔲 Validate user path after Stripe redirect |
 | **HIGH** | [Cross-Domain Tracking — CTA Changes](analytics/CROSS_DOMAIN_TRACKING.md) | Frontend | 🔲 Action Required |
 | **HIGH** | [Meta Pixel Setup in GTM](analytics/META_PIXEL_GTM_SETUP.md) | Frontend | 🔲 Pending |
@@ -28,6 +27,8 @@ This repository serves as the single source of truth for documentation that need
 
 | Item | Team | Completed |
 |------|------|-----------|
+| [Tour + Signup Instrumentation](analytics/07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md) | Rails | Jul 10, 2026 |
+| [Meta Pixel fbq Race Condition](analytics/07.10.26-META_PIXEL_FBQ_RACE_CONDITION.md) | Analytics (GTM v14) | Jul 10, 2026 |
 | [Post-Checkout Redirect Fix](analytics/POST_CHECKOUT_REDIRECT_INCIDENT.md) | Frontend | May 6, 2026 |
 | [GTM Installation on Rails](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | Rails | Dec 16, 2025 |
 | [GTM on Landing Pages](analytics/GOOGLE_ANALYTICS_GTM.md) | Frontend | Dec 16, 2025 |
