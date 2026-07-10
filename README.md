@@ -15,6 +15,7 @@ This repository serves as the single source of truth for documentation that need
 
 | Priority | Item | Team | Status |
 |----------|------|------|--------|
+| **CRITICAL** | [Tour + Signup Instrumentation](analytics/07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md) | Rails | 🔲 Action Required — same-day |
 | **HIGH** | [Post-Checkout Subscriber Flow](api/POST_CHECKOUT_SUBSCRIBER_FLOW.md) | Rails | 🔲 Validate user path after Stripe redirect |
 | **HIGH** | [Cross-Domain Tracking — CTA Changes](analytics/CROSS_DOMAIN_TRACKING.md) | Frontend | 🔲 Action Required |
 | **HIGH** | [Meta Pixel Setup in GTM](analytics/META_PIXEL_GTM_SETUP.md) | Frontend | 🔲 Pending |
@@ -38,6 +39,7 @@ This repository serves as the single source of truth for documentation that need
 byy-shared-docs/
 ├── analytics/                    # Analytics & tracking (Analytics Team)
 │   ├── GOOGLE_ANALYTICS_GTM.md           # GTM/GA4 setup ✅
+│   ├── 07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md  # 🔲 Critical Rails handoff
 │   ├── CROSS_DOMAIN_TRACKING.md          # Cross-domain linking CTA changes (🔲 action required)
 │   ├── ENGAGEMENT_TRACKING.md            # Engagement tracker installation for landing pages
 │   ├── META_PIXEL_GTM_SETUP.md           # Meta Pixel in GTM (🔲 action required)
@@ -75,6 +77,7 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
+| [**Tour + Signup Instrumentation**](analytics/07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md) | 🔲 **Critical** — fire `sign_up` + free tour funnel events (same-day) |
 | [**Post-Checkout Subscriber Flow**](api/POST_CHECKOUT_SUBSCRIBER_FLOW.md) | 🔲 **Action Required** - Handle Stripe redirect, create accounts, start onboarding |
 | [**Deploy Annotation Setup**](analytics/ANNOTATION_SETUP_RAILS.md) | 🔲 **Action Required** - Add deploy annotations to your CI pipeline |
 | [GTM Installation](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | ✅ Completed - GTM installed on Rails app |
