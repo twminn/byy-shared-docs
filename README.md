@@ -15,6 +15,7 @@ This repository serves as the single source of truth for documentation that need
 
 | Priority | Item | Team | Status |
 |----------|------|------|--------|
+| **CRITICAL** | [DTC Conversion Execution Plan](analytics/07.10.26-DTC_CONVERSION_EXECUTION_PLAN.md) | All | 🔲 **Canonical backlog** — start with LP PR #8 |
 | **HIGH** | [Post-Checkout Subscriber Flow](api/POST_CHECKOUT_SUBSCRIBER_FLOW.md) | Rails | 🔲 Validate user path after Stripe redirect |
 | **HIGH** | [Cross-Domain Tracking — CTA Changes](analytics/CROSS_DOMAIN_TRACKING.md) | Frontend | 🔲 Action Required |
 | **HIGH** | [Meta Pixel Setup in GTM](analytics/META_PIXEL_GTM_SETUP.md) | Frontend | 🔲 Pending |
@@ -29,6 +30,7 @@ This repository serves as the single source of truth for documentation that need
 |------|------|-----------|
 | [Tour + Signup Instrumentation](analytics/07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md) | Rails | Jul 10, 2026 |
 | [Meta Pixel fbq Race Condition](analytics/07.10.26-META_PIXEL_FBQ_RACE_CONDITION.md) | Analytics (GTM v14) | Jul 10, 2026 |
+| [DTC Conversion Execution Plan published](analytics/07.10.26-DTC_CONVERSION_EXECUTION_PLAN.md) | Analytics | Jul 10, 2026 (plan live; backlog open) |
 | [Post-Checkout Redirect Fix](analytics/POST_CHECKOUT_REDIRECT_INCIDENT.md) | Frontend | May 6, 2026 |
 | [GTM Installation on Rails](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | Rails | Dec 16, 2025 |
 | [GTM on Landing Pages](analytics/GOOGLE_ANALYTICS_GTM.md) | Frontend | Dec 16, 2025 |
@@ -40,7 +42,8 @@ This repository serves as the single source of truth for documentation that need
 byy-shared-docs/
 ├── analytics/                    # Analytics & tracking (Analytics Team)
 │   ├── GOOGLE_ANALYTICS_GTM.md           # GTM/GA4 setup ✅
-│   ├── 07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md  # 🔲 Critical Rails handoff
+│   ├── 07.10.26-DTC_CONVERSION_EXECUTION_PLAN.md  # 🔲 Canonical DTC backlog (all teams)
+│   ├── 07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md  # ✅ Tour + sign_up (Rails)
 │   ├── CROSS_DOMAIN_TRACKING.md          # Cross-domain linking CTA changes (🔲 action required)
 │   ├── ENGAGEMENT_TRACKING.md            # Engagement tracker installation for landing pages
 │   ├── META_PIXEL_GTM_SETUP.md           # Meta Pixel in GTM (🔲 action required)
@@ -65,6 +68,7 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
+| [**DTC Conversion Execution Plan**](analytics/07.10.26-DTC_CONVERSION_EXECUTION_PLAN.md) | 🔲 **Canonical** — PR #8, YouTube on `new`, Results, DMS capture |
 | [**Post-Checkout Redirect Incident**](analytics/POST_CHECKOUT_REDIRECT_INCIDENT.md) | Incident report + prevention measures for checkout dead-end |
 | [**Cross-Domain Tracking**](analytics/CROSS_DOMAIN_TRACKING.md) | 🔲 **Action Required** - Update CTA buttons for purchase attribution |
 | [**Meta Pixel GTM Setup**](analytics/META_PIXEL_GTM_SETUP.md) | 🔲 **Action Required** - Configure Meta Pixel in GTM |
@@ -78,7 +82,8 @@ byy-shared-docs/
 
 | Document | Description |
 |----------|-------------|
-| [**Tour + Signup Instrumentation**](analytics/07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md) | 🔲 **Critical** — fire `sign_up` + free tour funnel events (same-day) |
+| [**DTC Conversion Execution Plan**](analytics/07.10.26-DTC_CONVERSION_EXECUTION_PLAN.md) | 🔲 **Canonical** — tour shell, DMS content API, soft-path backlog |
+| [**Tour + Signup Instrumentation**](analytics/07.10.26-RAILS_TOUR_AND_SIGNUP_INSTRUMENTATION.md) | ✅ Completed Jul 10 — verify with Analytics |
 | [**Post-Checkout Subscriber Flow**](api/POST_CHECKOUT_SUBSCRIBER_FLOW.md) | 🔲 **Action Required** - Handle Stripe redirect, create accounts, start onboarding |
 | [**Deploy Annotation Setup**](analytics/ANNOTATION_SETUP_RAILS.md) | 🔲 **Action Required** - Add deploy annotations to your CI pipeline |
 | [GTM Installation](analytics/GOOGLE_ANALYTICS_GTM.md#rails-application-installation) | ✅ Completed - GTM installed on Rails app |
@@ -150,6 +155,7 @@ See [analytics/GOOGLE_ANALYTICS_GTM.md](analytics/GOOGLE_ANALYTICS_GTM.md) for f
 
 | Date | Change | Team |
 |------|--------|------|
+| 2026-07-10 | Added canonical DTC Conversion Execution Plan (diagnosis + soft engagement backlog) | Analytics |
 | 2026-05-07 | Added deploy annotation setup guides for Rails, Frontend, and Legacy teams | Analytics |
 | 2026-05-06 | Post-checkout redirect fix + subscriber flow doc for Rails team | Frontend |
 | 2026-04-21 | Added cross-domain tracking CTA changes for LP team | Analytics |
